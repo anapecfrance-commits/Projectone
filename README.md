@@ -65,5 +65,27 @@ Un fichier de configuration (ex: requirements.txt ou docker-compose.yml) ?
 Un fichier CSS ou un autre script JavaScript ?
 
 Un fichier README.md ?
+Pour faire fonctionner tout ça (si ce n'est pas déjà fait)
+Installez les dépendances Python :
+
+bash
+pip install fastapi uvicorn requests
+Installez et lancez Ollama sur votre machine, et assurez-vous qu'il tourne sur http://localhost:11434.
+
+Téléchargez le modèle mistral (ou llama3) avec :
+
+bash
+ollama pull mistral
+Créez un dossier static/ à côté de app.py et placez index.html dedans.
+
+Lancez le serveur :
+
+bash
+python app.py
+Ouvrez votre navigateur sur http://localhost:8000 et testez le chat.
+
+En résumé : C'est un prototype de chatbot web qui communique avec une IA locale (via Ollama), avec une interface simple. Le point faible actuel est qu'il n'y a pas de gestion d'historique de conversation (le modèle ne se souvient pas du contexte) – chaque message est indépendant.
+
+Dites-moi si vous voulez plus de détails sur un aspect particulier, ou envoyez-moi le troisième fichier !
 
 Si vous me l'envoyez, je pourrai aussi vous l'expliquer.
